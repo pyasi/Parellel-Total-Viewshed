@@ -1,0 +1,13 @@
+Anthony Todesco & Peter Yasi - Bowdoin College GIS Algorithms - Laura Toma - Fall 2014
+
+The viewshed algorithm computes a grid of 0's and 1's representing whether that point is visible or not-visible from a specified point in a DEM.
+
+Total viewshed algorithm computes the viewshed of every point in the grid.  The number of visible points is summed and put into an output grid at that point.
+
+We use open MPI in order to parallelize the computations to speed up the algorithm.  Open MPI download can be found at http://www.open-mpi.org/.
+
+Running the program:
+
+1.  Use the Makefile to compile the code (NOTE: you will have to change the compiler in the make file to the path of "mpic++" on your machine).  
+
+2.  Execute the program using the folloing syntax <path to openMPI>/mpirun -np 10 totalViewshed sampleDEM.asc outputDEM.asc
